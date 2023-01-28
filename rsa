@@ -1,48 +1,27 @@
-#!/usr/bin/env bash
-#is a challenge
-check_factor()
-{
-	if [ $# -ne 3 ];
-        then
-                args=("$@")
-                count=0
-                num2=1
-                for a in ${args[*]};
-                do
-                        if [ $count -gt 1 ];
-                        then
-                                num2=$(echo $a*$num2 | bc)
-                        fi
-                        count=$((count + 1))
-                done
-        else
-                num2=$3
-        fi
-
-        num1=$2
-        num=$(echo "$1" | tr ':' '=')
-
-        result=$(echo "if($num2 > $num1) 1 else 0" | bc)
-	        if ((result == 1)); then
-		        numcp=$num1
-		        num1=$num2
-		        num2=$numcp
-                fi
-
-        echo "$num$num1*$num2"
-}
-
-if [ $# -ne 1 ]
-then
-        echo 'Usage: rsa <file>'
-        exit 1
-else
-
-        while read i
-        do
-
-                result=$(factor "$i")
-                check_factor $result
-
-        done < "$1"
-fi
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAxsgUwt3U/xZlXft83jzlwxzCs50Qpt7pitkJ8q5VYT1XAEUU
+MkIA0eaxaga0YDyhQMlI9oZGbIppqusEdnDgdaLca6ATbcun5JiQ8lpTd6M5vsX0
+TDFKQwSmU7m0daj82TuGUKAPoNWYPhic3wdQymAPwz+BXaxP42qWnIFKa1gKfaMs
+AFUEMablcxElJq7rr1lD3H+tWC1pg1A1JyhniT3ZLl0FzoNjAVpZr1qnleocmM07
+FREXhUlU0HqR3hj2SDkOchMsE07niOaPiiEWwX4MjwBzliNOqg2+SuanG3cki9Uh
+xNh0Uy60zmACxQIkCtVqR5JiSKS99hQ8I9eWNwIDAQABAoIBAQCwd4cWx2ADZJpw
+qIXdtSoz4CBo25Kg0Vt6y9qs+l8JiC7oKmsXgsi/jpEJkxImLSzqGscPM3zpdqb/
++MtpaiOZyw7q7JzS5+0QXvCudcmLd/gXiBysV0WZ4VLXGRE/Mtnk75b5lF7LZVNW
+LPt2c0QhpM3Zg1MRGZuCRGmYXp72UwxDV3mSG3CBvdzSKC2rsjk2qqYeL34eCuaO
+gECXmUXNYSeAbAGH+BkrWiWYoWfdEEikYDv7vnmIUj7pNIO367cRMqzhNw5Brjot
+J49oA4xZ9PC6RtZoPp9wgM2Yp+kO/SvXv/PkiN6vJpRZseNsWdnoD8jYhFgOEGDK
+jETX8tMhAoGBAPZ8ypIiem0BhodOct/5rSkVBs6lbfJ2I3zu85I/p6OU1xWBzvTp
+f0wzqD965s+YzRC+cBeYsQR7TkIjUVuPsxJV356upqBi55tx26nIyjd9GCxzoJxo
+3vOBvrVDKoixnUfRqmVgj9JsoftBmxof5cZqlMtNLKSJtn+PWPL3+kb1AoGBAM5z
++PJj8rEbwI6CXznOcIi18B7B7jX09HLmmMyMQOeMhw63QhxsTeIXnvvm8a96n1Fs
+0Guu8s32TeeOtu19qHFK7N4DggVJvMQg5Cf86/t96S5qTBJ1os1RhzT9bpAwMwyh
+wYD4WpIhYf4sV/BYGlBqysgFcgGaWtObGy0h+XT7AoGAWQgKQ26gue7rIMR9Sdlt
+aoFlzA6FACcb+mx1HkZPzw5cAjC5CE2u5V9jTkqeRC31JC8lXeCRUAUZ51nKcUAe
+dmj+NNrw5M3Uypj9tv4HzLMqoCPDx7s5jMs4j1CLdIRzQxXAbo3KZT9H4vF3jKAo
+5tpolGZz0ZrMiJbGkjxv8mECgYEAxqpw4Adv7iBPjpNEQWM3hUbWtzJVIVUDumHO
+nd9FQcxH1tBgbOuHks66LZtR7VPpZbh5Y3YpriqbUv1RaH3oDoVUJFxpzN7lKDKi
+exx2lT7XmdOuOoE61arjmglaUKQhK8GobIwQ09gN7UIMqXqOb94kHpCm4YYAauoy
+H5825usCgYBgSF1obGe6jRIxeRmrVVRZT2U3K7SAafeK0LsGwFp1GRVa8FHxKoTv
+SWAmtLJHQkrsjgULtFiqi36jwHjmnXbhGGPd77Z0CSEq3nu9SahXURMByH0vw4xF
+GCINOvEniOY7d78+9bWhY738PDH0FImcvKsXAb0IUYTG/wmFYQBl3w==
+-----END RSA PRIVATE KEY-----
